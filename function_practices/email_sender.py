@@ -80,14 +80,7 @@ def send_mail(addr, subj_layout, cont_layout, attachment=None):
         smtp.close()
 
 
-# recipient_addr = 'recipient address'
-# subject = 'your subject'
-# contents = 'email contents'
-# # attached_file = 'None or your attachment file Path'
-# attached_file = None
-# send_mail(recipient_addr, subject, contents, attached_file)
-
-recipient_addr = 'stewart7@naver.com'
+recipient_addr = 'recipient address'
 subject = 'your subject'
 contents = 'email contents'
 # attached_file = 'None or your attachment file Path'
