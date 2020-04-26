@@ -5,7 +5,7 @@ from pytube import YouTube, Playlist
 import configparser
 config = configparser.ConfigParser()
 config.read('youtube_config.ini')
-DOWNLOAD_DIR = config.get('download', 'downlaod_dir')
+DOWNLOAD_DIR = config.get('download', 'download_dir')
 
 the_playlist_url = input('Put your playlist url: ')
 # the_playlist_url = "https://www.youtube.com/playlist?list=PLMhsC6kNtmg1qh9ujjfcujqxNRECPlLBp"
