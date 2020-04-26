@@ -68,10 +68,13 @@ for idx, url in enumerate(playlist):
         myList.append(myDict)
 
 print('The downloadable streams are as follows:\n')
+totalsize = 0
 for idx, dict in enumerate(myList):
+    totalsize += float(dict.get('filesize'))
     print(idx, dict)
 
-answer = input('\nShall I download the streams above? (y/n): ')
+print('\nThe total size is', '{:,}'.format(totalsize/1000000) + 'MB')
+answer = input('Shall I download the streams above? (y/n): ')
 if answer == 'n':
     print('Download cancelled. Program is closed now.')
     exit()
