@@ -6,8 +6,8 @@ import smtplib
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
 # 보내는 메일 계정
-SMTP_USER = "kyungho.lim@gmail.com"
-SMTP_PASSWORD = "brmiswufhxxntooo"  # Google Email 앱비밀번호
+SMTP_USER = "<your_gmail_address>"
+SMTP_PASSWORD = "<your_google_app_password>"  # Google Email 앱비밀번호
 # 참고: 구글 앱 비밀번호 생성 - https://support.google.com/accounts/answer/185833
 
 
