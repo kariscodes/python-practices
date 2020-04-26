@@ -1,15 +1,21 @@
+import configparser
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
 
-# SMTP 접속을 위한 서버, 계정 설정
+config = configparser.ConfigParser()
+config.read('gmailconfig.ini')
+smtp_user = config.get('gmail_app', 'smtp_user')
+smtp_password = config.get('gmail_app', 'smtp_password')
+
+"""
+For generating google application password,
+refer to the following : https://support.google.com/accounts/answer/185833
+"""
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
-# 보내는 메일 계정
-SMTP_USER = "<your_gmail_address>"
-SMTP_PASSWORD = "<your_google_app_password>"  # Google Email 앱비밀번호
-# 참고: 구글 앱 비밀번호 생성 - https://support.google.com/accounts/answer/185833
-
+SMTP_USER = smtp_user           # Google Mail Address
+SMTP_PASSWORD = smtp_password   # Google Mail Application Password
 
 # 이메일 유효성 검사 함수
 def is_valid(addr):
@@ -74,12 +80,18 @@ def send_mail(addr, subj_layout, cont_layout, attachment=None):
         smtp.close()
 
 
-# recipient_addr = 'stewart7@naver.com'
-recipient_addr = 'stewart@daesung.com'
-# recipient_addr = 'yugin.lim7@gmail.com'
-subject = 'Python QLineEdit 숫자 입력 관련 Practices'
-contents = 'Python QLineEdit에 숫자, 자릿수(최소/최대) 지정까지는 구현함. 그런데 천단위 콤마(,) 구현을 잘 모르겠음.'
-# attached_file = '/home/kyungho/PythonProjects/Practices/영어단어-음식.ods'
-attached_file = '//PyQt5_number.py'
-# attached_file = '/home/kyungho/PythonProjects/Practices/email_sender.py'
+# recipient_addr = 'recipient address'
+# subject = 'your subject'
+# contents = 'email contents'
+# # attached_file = 'None or your attachment file Path'
+# attached_file = None
+# send_mail(recipient_addr, subject, contents, attached_file)
+
+recipient_addr = 'stewart7@naver.com'
+subject = 'your subject'
+contents = 'email contents'
+# attached_file = 'None or your attachment file Path'
+attached_file = None
 send_mail(recipient_addr, subject, contents, attached_file)
+
+
