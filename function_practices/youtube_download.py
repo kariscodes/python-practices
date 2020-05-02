@@ -4,7 +4,7 @@ from pytube import YouTube, Playlist
 import configparser
 config = configparser.ConfigParser()
 config.read('youtube_config.ini')
-DOWNLOAD_DIR = config.get('download', 'downlaod_dir')
+DOWNLOAD_DIR = config.get('download', 'download_dir')
 
 yt = YouTube("https://www.youtube.com/watch?v=VMXTeEkAxeo")
 videoStreams = yt.streams.filter()
